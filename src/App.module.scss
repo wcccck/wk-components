@@ -1,5 +1,5 @@
 .menu{
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -14,7 +14,7 @@
   .btn{
     position: absolute;
     right: 10px;
-    bottom: 50px;
+    bottom: 70px;
     border-radius: 50%;
     height: 100px;
     width: 100px;
@@ -22,9 +22,9 @@
 
 }
 .btn{
-  position: absolute;
+  position: fixed;
   right: 10px;
-  bottom: 50px;
+  bottom: 70px;
   border-radius: 50%;
   height: 100px;
   width: 100px;

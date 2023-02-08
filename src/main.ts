@@ -8,8 +8,10 @@ const files = import.meta.glob('./examples/**/*.tsx')
 const routes:RouteRecordRaw[] = []
 
 async function run(){
+
   for (const key in files) {
     const module = await files[key]()
+
     for (let moduleKey in module) {
       module[moduleKey].displayName = moduleKey
 
@@ -20,15 +22,16 @@ async function run(){
       })
       // console.log(routes)
     }
-    const Router = createRouter({
-      routes,
-      history:createWebHashHistory()
-    })
-    const app = createApp(App,{routes})
-    app.use(Router)
-    app.mount('#app')
+
 
   }
+  const Router = createRouter({
+    routes,
+    history:createWebHashHistory()
+  })
+  const app = createApp(App,{routes})
+  app.use(Router)
+  app.mount('#app')
 }
 run()
 

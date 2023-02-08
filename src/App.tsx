@@ -11,12 +11,12 @@ export default defineComponent({
     }
   },
   setup(props){
+
     const width = window.innerWidth
     const height = window.innerHeight
     const showList = ref(false)
     provide('showList',showList)
     return ()=>{
-
       return <div style={{width:width+'px',height:height+'px'}}>
         <button class={classes.btn} onClick={()=>{
           showList.value = true
@@ -46,7 +46,7 @@ const Menu = defineComponent({
       return <div class={classes.menu} style={{display:showList.value ? 'block' : 'none',zIndex:10}}>
         <ul>
           {props.routes.map(item => {
-            return <li>
+            return <li onClick={()=>{showList.value = false} }>
               <RouterLink to={item.path}>{item.name}</RouterLink>
             </li>
           })}
