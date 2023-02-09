@@ -45,7 +45,7 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 220px;
+    top: 155px;
     border-top: 1px solid gray;
     border-bottom: 0.5px solid gray;
     //padding-left: 5px;
@@ -55,8 +55,11 @@
   .hour{
     overflow: scroll;
     display: flex;
+    width: 100px;
+
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     //align-items:s;
     //overflow: scroll;
     //::-webkit-scrollbar{ display:none}
@@ -66,5 +69,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .item{
+    height: 30px;
+    line-height: 30px;
+    //display: flex;
+    //align-items: center;
+    background: greenyellow;
+    width: 50px;
+    text-align: center;
   }
 }

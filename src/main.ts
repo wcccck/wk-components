@@ -2,11 +2,12 @@ import { createApp } from 'vue'
 import {RouteRecordRaw,createRouter,createWebHashHistory} from "vue-router";
 import './style.scss'
 import App from './App'
+import * as utils from './utils'
+
 import 'virtual:svg-icons-register'
 const files = import.meta.glob('./examples/**/*.tsx')
-// console.log(files)
 const routes:RouteRecordRaw[] = []
-
+import './utils/index'
 async function run(){
 
   for (const key in files) {
@@ -30,6 +31,7 @@ async function run(){
     history:createWebHashHistory()
   })
   const app = createApp(App,{routes})
+  app.config.globalProperties.utils = utils
   app.use(Router)
   app.mount('#app')
 }

@@ -23,4 +23,16 @@ export default defineConfig({
      */
     // customDomId: '__svg__icons__dom__',
   })],
+  server:{
+    proxy:{
+      "/api":{
+        // target:"http://124.221.191.225:7777",
+        target:"http://localhost:7777/",
+        changeOrigin:true,
+        rewrite:(path) => path.replace(/^\/api/,"")
+      }
+
+    }
+
+  }
 })
